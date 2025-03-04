@@ -2,7 +2,8 @@ import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 // import { ModeToggleButton } from "./components/mode-toggle/ModeToggleButton";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { t } from "i18next";
+import Navbar from "./components/navbar/Navbar";
+
 
 function App() {
   const {
@@ -17,10 +18,9 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {/* <ModeToggleButton   /> */}
-      <div>{t("hello")}</div>
-      <button type="button" onClick={handleChangeLanguage}>
-        Change Language
-      </button>
+      <div>
+        <Navbar />
+      </div>
     </ThemeProvider>
   );
 }

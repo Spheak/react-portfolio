@@ -1,0 +1,9 @@
+.navbar{
+        @apply h-screen w-[80%] z-10 absolute top-0 right-0 bg-foreground  gap-10 
+}
+.navbar-items{
+        @apply block p-5;
+}
+.navbar-items:hover{
+        @apply bg-foreground text-background;
+}
