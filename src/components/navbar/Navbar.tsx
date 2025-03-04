@@ -8,7 +8,7 @@ const Navbar = () => {
   const [collapsed, setCollapsed] = useState(true);
   const [flage, setFlage] = useState(false);
   return (
-    <nav className="flex  items-center  justify-between p-5 lg:py-0 bg-primary text-white">
+    <nav className="max-w-[1800px] w-full flex  items-center  justify-between p-5 lg:py-0 bg-primary text-white">
       <div>
         <p>SoPheak</p>
       </div>
@@ -25,23 +25,39 @@ const Navbar = () => {
               }}
             />
           </div>
-          <a href="" className="relative z-10 block p-5  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200">
+          <a
+            href=""
+            className="relative z-10 block p-5  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
+          >
             About
           </a>
-          <a href="" className="block p-5 relative z-10  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200">
+          <a
+            href=""
+            className="block p-5 relative z-10  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
+          >
             Blog
           </a>
-          <a href="" className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200">
+          <a
+            href=""
+            className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
+          >
             Education
           </a>
-          <a href="" className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200">
+          <a
+            href=""
+            className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
+          >
             Contact
           </a>
         </div>
       </div>
       <div className="text-foreground flex items-center gap-5">
-        <Button onClick={()=> {setFlage(!flage)}}>
-                {flage ? <CambodiaIcon/> : <UkIcon/>}
+        <Button
+          onClick={() => {
+            setFlage(!flage);
+          }}
+        >
+          {flage ? <CambodiaIcon /> : <UkIcon />}
         </Button>
 
         <ModeToggleButton />

@@ -3,6 +3,8 @@ import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
+import Home from "./components/content-layout/Home";
+import Education from "./components/content-layout/Education";
 
 
 function App() {
@@ -18,9 +20,13 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {/* <ModeToggleButton   /> */}
-      <div>
+      <header className="bg-primary flex justify-center">
         <Navbar />
-      </div>
+      </header>
+      <main className="mx-[2%] lg:mx-[10%]">
+        <Home />
+        <Education />
+      </main>
     </ThemeProvider>
   );
 }
