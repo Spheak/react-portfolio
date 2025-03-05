@@ -1,7 +1,7 @@
 import CodingLottie from "@/assets/lotties/components/CodingLottie";
 import { Button } from "../ui/button";
 import { FileDown, Send } from "lucide-react";
-
+import resume from '@/assets/pdf/resume.pdf'
 const Home = () => {
         return (
           <div className="flex justify-between items-center gap-20 lg:mx-[10%]">
@@ -19,17 +19,17 @@ const Home = () => {
                 </p>
               </div>
               <div className="flex flex-col lg:flex-row gap-2 [&>button]:block">
-                <Button className=" w-[150px] bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
-                  <div className="flex gap-1 items-center justify-center">
-                    <span>Contact Me</span>
+                <Button className="w-[150px] p-0 bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
+                  <a href="#contact" className="flex gap-1 items-center justify-center  py-2">
+                    <p>Contact Me</p>
                     <Send />
-                  </div>
+                  </a>
                 </Button>
-                <Button className="w-[150px] bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
-                  <div className="flex gap-1 items-center justify-center">
+                <Button className="w-[150px] p-0 bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
+                  <a href={resume} download className="flex gap-1 items-center justify-center py-2">
                     <p>Resume</p>
                     <FileDown />
-                  </div>
+                  </a>
                 </Button>
               </div>
             </div>
