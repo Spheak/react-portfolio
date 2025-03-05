@@ -26,25 +26,25 @@ const Navbar = () => {
             />
           </div>
           <a
-            href=""
+            href="#about"
             className="relative z-10 block p-5  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
             About
           </a>
           <a
-            href=""
+            href="#"
             className="block p-5 relative z-10  after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
             Blog
           </a>
           <a
-            href=""
+            href="#project"
             className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Education
+            Projects
           </a>
           <a
-            href=""
+            href="#contact"
             className="block p-5 relative z-10 after:bg-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
             Contact
