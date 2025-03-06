@@ -7,7 +7,7 @@ import UkIcon from "@/assets/UkIcon";
 import "./navbar.css";
 
 const Navbar = () => {
-  const sideNavRef = useRef(null);
+  const sideNavRef = useRef<HTMLDivElement>(null);
   const [collapsed, setCollapsed] = useState(true);
   const [flage, setFlage] = useState(false);
 
@@ -21,8 +21,8 @@ const Navbar = () => {
     };
   }, []);
 
-  function handleClickOutside(event) {
-    if (sideNavRef.current && !sideNavRef.current.contains(event.target)) {
+  function handleClickOutside(event:MouseEvent) {
+    if (sideNavRef.current && !sideNavRef.current.contains(event.target as Node)) {
       setCollapsed(true)
     }
   }
