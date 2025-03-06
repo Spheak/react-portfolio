@@ -8,6 +8,7 @@ import About from "./components/content-layout/About";
 import Project from "./components/content-layout/Project";
 import Footer from "./components/content-layout/Footer";
 import Contact from "./components/content-layout/Contact";
+import { Toaster } from "sonner";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   };
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Toaster />
       {/* <ModeToggleButton   /> */}
       <header className="bg-primary flex justify-center">
         <Navbar />
@@ -30,7 +32,7 @@ function App() {
         <Home />
         <About />
         <Project />
-        <Contact/>
+        <Contact />
       </main>
       <footer className="bg-primary  mt-10 dark:bg-black">
         <div className="max-w-[1800px] mx-auto">
