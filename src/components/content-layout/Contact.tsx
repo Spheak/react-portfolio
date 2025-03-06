@@ -1,5 +1,8 @@
 import { Github, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import { error } from "console";
 
 const Contact = () => {
   return (
@@ -44,14 +47,18 @@ const Contact = () => {
             <Github />
             <div>
               <h2>Github</h2>
-              <a href="https://github.com/Spheak" target="blank">
+              <a
+                href="https://github.com/Spheak"
+                target="blank"
+                className="hover:text-primary  hover:underline"
+              >
                 https://github.com/Spheak
               </a>
             </div>
           </div>
         </div>
       </div>
-      <form className="border-2border-primary p-4 flex flex-col gap-5">
+      <form className="p-4 flex flex-col gap-5">
         <h2 className="text-2xl mb-5">Send Message</h2>
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Your name</label>
@@ -80,7 +87,16 @@ const Contact = () => {
           ></textarea>
         </div>
         <Button
-          type="submit"
+          onClick={() => {
+            toast.error("Sorry! Feature is under construction.", {
+              className: "!bg-primary !text-white !border-white",
+              action: {
+                label: "Close",
+                onClick: () => {},
+              },
+            });
+          }}
+          type="button"
           className="mt-5 bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white"
         >
           <div className="flex gap-1 items-center justify-center">
