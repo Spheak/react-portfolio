@@ -3,7 +3,7 @@ import { Computer, Cpu } from "lucide-react";
 const About = () => {
   return (
     <div
-      className="grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-center items-center gap-20 lg:mx-[10%]"
+      className="grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-center items-center gap-10 lg:gap-20 lg:mx-[10%]"
       id="about"
     >
       <div className="flex flex-col gap-5">
