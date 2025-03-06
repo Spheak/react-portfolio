@@ -1,8 +1,6 @@
 import { Github, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-import { cn } from "@/lib/utils";
-import { error } from "console";
 
 const Contact = () => {
   return (

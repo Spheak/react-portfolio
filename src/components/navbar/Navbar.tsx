@@ -64,15 +64,6 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#"
-            onClick={() => {
-              setCollapsed(true);
-            }}
-            className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
-          >
-            Blog
-          </a>
-          <a
             href="#project"
             onClick={() => {
               setCollapsed(true);
@@ -89,6 +80,15 @@ const Navbar = () => {
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
             Contact
+          </a>
+          <a
+            href="#"
+            onClick={() => {
+              setCollapsed(true);
+            }}
+            className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
+          >
+            Blog
           </a>
         </div>
       </div>
