@@ -1,3 +1,46 @@
 {
-  "hello": "hello guys"
+  "navbar": {
+    "brand": "Sopheak",
+    "about": "About",
+    "project": "Project",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "home": {
+    "primaryTitle": "Welcome to my domain",
+    "secondaryTitle": "I'm Sopheak SY",
+    "description": "Fresh graduate student of Computer Science at Royal University of Phnom Penh"
+  },
+  "about": {
+    "title": "About <1>Me</1>",
+    "description": "I specialize in both frontend and backend technologies to create seamless, scalable web applications. With expertise in React, Next.js, Spring Boot, and Laravel, I build responsive user interfaces and robust backend systems, ensuring high performance, security, and maintainability throughout the entire application lifecycle.",
+    "frontendTitle": "Frontend Development",
+    "frontendDescription": "I build responsive, high-performance web applications with clean, maintainable code. Skilled in React, Next.js, Tailwind CSS, WebSockets, and API integrations, I focus on crafting seamless user experiences and optimizing performance.",
+    "backendTitle": "Backend Development",
+    "backendDescription": "I develop scalable and efficient backend systems using Spring Boot and Laravel. Skilled in RESTful APIs, WebSockets, database management, and performance optimization, I focus on building secure and maintainable architectures."
+  },
+  "project": {
+    "title": " <1>Project</1> I've Done"
+  },
+  "contact": {
+    "title": "<1>Contact</1> Me",
+    "description": "Have a project in mind or just want to connect? Feel free to reach out! I'm always open to discussing new opportunities, collaborations, or simply chatting about tech."
+  },
+  "label": {
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "github": "Github",
+    "sendMessage": "Sent Message",
+    "yourName": "Your Name",
+    "message": "Message"
+  },
+  "labelValue": {
+    "address": "Phnom Penh, Cambodia"
+  },
+  "button": {
+    "contactMe": "Contact Me",
+    "resume": "Resume",
+    "send": "Send"
+  }
 }

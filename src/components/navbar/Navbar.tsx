@@ -5,11 +5,13 @@ import { Button } from "../ui/button";
 import CambodiaIcon from "@/assets/CambodiaIcon";
 import UkIcon from "@/assets/UkIcon";
 import "./navbar.css";
+import { t } from "i18next";
+// import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = ({ handleLanguage }:{handleLanguage: () => void}) => {
   const sideNavRef = useRef<HTMLDivElement>(null);
   const [collapsed, setCollapsed] = useState(true);
-  const [flage, setFlage] = useState(false);
+  const [flage, setFlage] = useState("en");
 
   useEffect(() => {
     // Add event listener to the document object
@@ -21,24 +23,26 @@ const Navbar = () => {
     };
   }, []);
 
-  function handleClickOutside(event:MouseEvent) {
-    if (sideNavRef.current && !sideNavRef.current.contains(event.target as Node)) {
-      setCollapsed(true)
+  function handleClickOutside(event: MouseEvent) {
+    if (
+      sideNavRef.current &&
+      !sideNavRef.current.contains(event.target as Node)
+    ) {
+      setCollapsed(true);
     }
   }
-  useEffect(()=>{
-    if(collapsed === false){
+  useEffect(() => {
+    if (collapsed === false) {
       document.body.style.overflow = "hidden";
-    }
-    else{
+    } else {
       document.body.style.overflow = "auto";
     }
-  },[collapsed])
+  }, [collapsed]);
 
   return (
     <nav className="max-w-[1800px] w-full flex  items-center  justify-between p-5 lg:py-0 bg-primary text-white">
       <div>
-        <p>SoPheak</p>
+        <p>{t("navbar.brand")}</p>
       </div>
       <div>
         <div
@@ -61,7 +65,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            About
+            {t("navbar.about")}
           </a>
           <a
             href="#project"
@@ -70,7 +74,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Projects
+            {t("navbar.project")}
           </a>
           <a
             href="#contact"
@@ -79,7 +83,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Contact
+            {t("navbar.contact")}
           </a>
           <a
             href="#"
@@ -88,7 +92,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Blog
+            {t("navbar.blog")}
           </a>
         </div>
       </div>
@@ -96,10 +100,11 @@ const Navbar = () => {
       <div className="text-foreground flex items-center gap-5">
         <Button
           onClick={() => {
-            setFlage(!flage);
+            setFlage("en" === flage ? "kh" : "en");
+            handleLanguage();
           }}
         >
-          {flage ? <CambodiaIcon /> : <UkIcon />}
+          {flage === "en" ? <CambodiaIcon /> : <UkIcon />}
         </Button>
 
         <ModeToggleButton />

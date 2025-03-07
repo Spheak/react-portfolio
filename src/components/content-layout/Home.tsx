@@ -2,32 +2,37 @@ import CodingLottie from "@/assets/lotties/components/CodingLottie";
 import { Button } from "../ui/button";
 import { FileDown, Send } from "lucide-react";
 import resume from '@/assets/pdf/resume.pdf'
+import { t } from "i18next";
 const Home = () => {
         return (
           <div className="flex justify-between items-center gap-20 lg:mx-[10%]">
             <div className="flex flex-col gap-10 my-20">
               <div>
                 <h4 className="uppercase font-semibold">
-                  Welcome to my domain
+                  {t("home.primaryTitle")}
                 </h4>
-                <h1 className="text-4xl lg:text-[60px] font-serif uppercase font-bold">
-                  I'm Sopheak SY
+                <h1 className={`text-4xl lg:text-[60px] uppercase font-bold mt-4`}>
+                  {t("home.secondaryTitle")}
                 </h1>
-                <p className="mt-5 text-xs">
-                  Fresh graduate student of Computer Science at Royal University
-                  of Phnom Penh
-                </p>
+                <p className="mt-5 text-xs">{t("home.description")}</p>
               </div>
               <div className="flex flex-col lg:flex-row gap-2 [&>button]:block">
                 <Button className="w-[150px] p-0 bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
-                  <a href="#contact" className="flex gap-1 items-center justify-center  py-2">
-                    <p>Contact Me</p>
+                  <a
+                    href="#contact"
+                    className="flex gap-1 items-center justify-center  py-2"
+                  >
+                    <p>{t("button.contactMe")}</p>
                     <Send />
                   </a>
                 </Button>
                 <Button className="w-[150px] p-0 bg-background hover:bg-background shadow-none border-primary border rounded-none text-foreground cursor-pointer active:bg-primary active:text-white">
-                  <a href={resume} download className="flex gap-1 items-center justify-center py-2">
-                    <p>Resume</p>
+                  <a
+                    href={resume}
+                    download
+                    className="flex gap-1 items-center justify-center py-2"
+                  >
+                    <p>{t("button.resume")}</p>
                     <FileDown />
                   </a>
                 </Button>

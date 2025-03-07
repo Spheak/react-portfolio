@@ -1,6 +1,8 @@
 import { Github, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
+import { t } from "i18next";
+import { Trans } from "react-i18next";
 
 const Contact = () => {
   return (
@@ -10,41 +12,39 @@ const Contact = () => {
     >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-5">
-          <h1 className=" text-4xl uppercase">
-            <span className="text-primary">Contact</span> Me
+          <h1 className=" text-3xl uppercase">
+            <Trans i18nKey="contact.title">
+              Me <span className="text-primary">Contact</span>
+            </Trans>
           </h1>
-          <p>
-            Have a project in mind or just want to connect? Feel free to reach
-            out! I'm always open to discussing new opportunities,
-            collaborations, or simply chatting about tech.
-          </p>
+          <p>{t("contact.description")}</p>
         </div>
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-5">
             <MapPin />
             <div>
-              <h2>Address</h2>
-              <p>Phnom Penh, Cambodia</p>
+              <h2>{t("label.address")}</h2>
+              <p>{t("labelValue.address")}</p>
             </div>
           </div>
           <div className="flex items-center gap-5">
             <Phone />
             <div>
-              <h2>Phone</h2>
+              <h2>{t("label.phone")}</h2>
               <p>+855 15 809 059</p>
             </div>
           </div>
           <div className="flex items-center gap-5">
             <Mail />
             <div>
-              <h2>Email</h2>
+              <h2>{t("label.email")}</h2>
               <p>sopheak6336@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center gap-5">
             <Github />
             <div>
-              <h2>Github</h2>
+              <h2>{t("label.github")}</h2>
               <a
                 href="https://github.com/Spheak"
                 target="blank"
@@ -57,9 +57,9 @@ const Contact = () => {
         </div>
       </div>
       <form className="p-4 flex flex-col gap-5">
-        <h2 className="text-2xl mb-5">Send Message</h2>
+        <h2 className="text-2xl mb-5">{t("label.sendMessage")}</h2>
         <div className="flex flex-col gap-2">
-          <label htmlFor="name">Your name</label>
+          <label htmlFor="name">{t("label.yourName")}</label>
           <input
             type="text"
             name="name"
@@ -68,7 +68,7 @@ const Contact = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t("label.email")}</label>
           <input
             type="text"
             name="email"
@@ -77,7 +77,7 @@ const Contact = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="description">Message</label>
+          <label htmlFor="description">{t("label.message")}</label>
           <textarea
             name="description"
             id="description"

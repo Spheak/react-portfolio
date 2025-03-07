@@ -1,11 +1,14 @@
 import project1 from '@/assets/images/ecommerce-project.webp'
+import { Trans } from 'react-i18next';
 
 const Project = () => {
   return (
     <div className="flex flex-col  gap-5 lg:mx-[10%]" id="project">
       <div>
         <h1 className="text-2xl lg:text-3xl uppercase  text-center">
-          <span className='text-primary'>Projects</span> I've Done
+          <Trans i18nKey="project.title">
+            I've Done<span className="text-primary">Project</span>
+          </Trans>
         </h1>
         {/* <div className="flex justify-center">
           <hr className="w-[100px] bg-primary h-2" />

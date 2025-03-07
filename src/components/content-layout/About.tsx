@@ -1,4 +1,6 @@
+import { t } from "i18next";
 import { Computer, Cpu } from "lucide-react";
+import { Trans } from "react-i18next";
 
 const About = () => {
   return (
@@ -9,16 +11,13 @@ const About = () => {
       <div className="flex flex-col gap-5">
         <div>
           <h1 className="text-3xl uppercase">
-            About <span className=" text-primary">Me</span>
+            <Trans i18nKey="about.title">
+              About <span className="text-primary">Me</span>
+            </Trans>
           </h1>
           {/* <hr className="w-[100px] bg-primary h-2" /> */}
         </div>
-        <p className="text-justify">
-          I'm a passionate Frontend Developer with experience in building
-          responsive and user-friendly web applications. Currently, I'm honing
-          my skills through hands-on projects and internships, focusing on
-          modern JavaScript frameworks, WebSocket development, and UI/UX design.
-        </p>
+        <p className="text-justify">{t("about.description")}</p>
       </div>
       <div className="flex flex-col gap-10">
         <div className="flex gap-10 ml-5 justify-center items-center">
@@ -28,12 +27,10 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-semibold">Frontend Development</h2>
-            <p className="text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores ratione ipsa totam necessitatibus, corporis voluptatum,
-              molestiae,{" "}
-            </p>
+            <h2 className="text-xl font-semibold">
+              {t("about.frontendTitle")}
+            </h2>
+            <p className="text-justify">{t("about.frontendDescription")}</p>
           </div>
         </div>
         <div className="flex gap-10 ml-5 justify-center items-center">
@@ -43,12 +40,8 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-semibold">Backend Development</h2>
-            <p className="text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores ratione ipsa totam necessitatibus, corporis voluptatum,
-              molestiae,{" "}
-            </p>
+            <h2 className="text-xl font-semibold">{t("about.backendTitle")}</h2>
+            <p className="text-justify">{t("about.backendDescription")}</p>
           </div>
         </div>
       </div>
