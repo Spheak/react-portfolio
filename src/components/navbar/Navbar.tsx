@@ -5,12 +5,22 @@ import { Button } from "../ui/button";
 import CambodiaIcon from "@/assets/CambodiaIcon";
 import UkIcon from "@/assets/UkIcon";
 import "./navbar.css";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const sideNavRef = useRef<HTMLDivElement>(null);
   const [collapsed, setCollapsed] = useState(true);
   const [flage, setFlage] = useState(false);
-
+  const {
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const handleChangeLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "kh" : "en";
+    setCurrentLanguage(newLanguage);
+    changeLanguage(newLanguage);
+  };
   useEffect(() => {
     // Add event listener to the document object
     document.addEventListener("mousedown", handleClickOutside);
@@ -61,7 +71,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            About
+            {t("navbar.about")}
           </a>
           <a
             href="#project"
@@ -70,7 +80,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Projects
+            {t("navbar.project")}
           </a>
           <a
             href="#contact"
@@ -79,7 +89,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Contact
+            {t("navbar.contact")}
           </a>
           <a
             href="#"
@@ -88,7 +98,7 @@ const Navbar = () => {
             }}
             className="hover:bg-foreground hover:text-background lg:hover:bg-primary relative z-10 block p-5  after:hidden lg:after:block after:bg-white after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0  after:h-1 after:-z-10 hover:after:w-full after:transition-all after:duration-200"
           >
-            Blog
+            {t("navbar.blog")}
           </a>
         </div>
       </div>
@@ -97,9 +107,10 @@ const Navbar = () => {
         <Button
           onClick={() => {
             setFlage(!flage);
+            handleChangeLanguage();
           }}
         >
-          {flage ? <CambodiaIcon /> : <UkIcon />}
+          {currentLanguage === 'en' ? <CambodiaIcon /> : <UkIcon />}
         </Button>
 
         <ModeToggleButton />
