@@ -6,7 +6,6 @@ import CambodiaIcon from "@/assets/CambodiaIcon";
 import UkIcon from "@/assets/UkIcon";
 import "./navbar.css";
 import { t } from "i18next";
-// import { useTranslation } from "react-i18next";
 
 const Navbar = ({ handleLanguage }:{handleLanguage: () => void}) => {
   const sideNavRef = useRef<HTMLDivElement>(null);
@@ -40,9 +39,9 @@ const Navbar = ({ handleLanguage }:{handleLanguage: () => void}) => {
   }, [collapsed]);
 
   return (
-    <nav className="max-w-[1800px] w-full flex  items-center  justify-between p-5 lg:py-0 bg-primary text-white">
+    <nav className="max-w-[1800px] w-full flex  items-center  justify-between p-5 px-0 lg:py-0 bg-primary text-white mx-[2%]">
       <div>
-        <p>{t("navbar.brand")}</p>
+        <p className="font-semibold uppercase">{t("navbar.brand")}</p>
       </div>
       <div>
         <div

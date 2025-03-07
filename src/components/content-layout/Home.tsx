@@ -1,17 +1,19 @@
-import CodingLottie from "@/assets/lotties/components/CodingLottie";
+import photo from '@/assets/images/images2.jpg'
 import { Button } from "../ui/button";
 import { FileDown, Send } from "lucide-react";
 import resume from '@/assets/pdf/resume.pdf'
 import { t } from "i18next";
 const Home = () => {
         return (
-          <div className="flex justify-between items-center gap-20 lg:mx-[10%]">
-            <div className="flex flex-col gap-10 my-20">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-20 lg:mx-[10%] ">
+            <div className="flex flex-col gap-10 mt-10 lg:mt-0 flex-1">
               <div>
                 <h4 className="uppercase font-semibold">
                   {t("home.primaryTitle")}
                 </h4>
-                <h1 className={`text-4xl lg:text-[60px] uppercase font-bold mt-4`}>
+                <h1
+                  className={`text-4xl lg:text-[60px] uppercase font-bold mt-4`}
+                >
                   {t("home.secondaryTitle")}
                 </h1>
                 <p className="mt-5 text-xs">{t("home.description")}</p>
@@ -38,8 +40,11 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className="absolute top-50 left-[30%] lg:relative -z-10 lg:top-0 lg:left-auto">
-              <CodingLottie />
+            <div className="flex-1 flex justify-center items-center flex-col gap-3">
+              <img src={photo} alt="" className=" rounded-md " />
+              <p className="italic">
+                “ Age doesn't make you old—evolution does. ”
+              </p>
             </div>
           </div>
         );

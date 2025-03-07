@@ -17,12 +17,10 @@ function App() {
     } = useTranslation();
     const [currentLanguage, setCurrentLanguage] = useState(language);
     const handleChangeLanguage = () => {
-      console.log(currentLanguage)
       const newLanguage = currentLanguage === "en" ? "kh" : "en";
       setCurrentLanguage(newLanguage);
       changeLanguage(newLanguage);
     };
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches)
   return (
     <div className={`${currentLanguage === "kh" ? "khmer-font" : "english-font"}`}>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -31,7 +29,7 @@ function App() {
         <header className="bg-primary flex justify-center">
           <Navbar handleLanguage={handleChangeLanguage} />
         </header>
-        <main className="mx-[2%] lg:mx-auto max-w-[1800px] flex flex-col gap-15">
+        <main className="mx-[2%] lg:mx-auto max-w-[1800px] flex flex-col gap-15 mt-10">
           <Home />
           <About />
           <Project />

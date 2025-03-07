@@ -7,7 +7,7 @@ import { Trans } from "react-i18next";
 const Contact = () => {
   return (
     <section
-      className="grid grid-cols-1 lg:grid-cols-2 mx-[2%] lg:mx-[10%] gap-5"
+      className="grid grid-cols-1 lg:grid-cols-2 mx-[2%] lg:mx-[10%] gap-10"
       id="contact"
     >
       <div className="flex flex-col gap-5">
@@ -56,7 +56,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <form className="p-4 flex flex-col gap-5">
+      <form className="flex flex-col gap-5">
         <h2 className="text-2xl mb-5">{t("label.sendMessage")}</h2>
         <div className="flex flex-col gap-2">
           <label htmlFor="name">{t("label.yourName")}</label>
