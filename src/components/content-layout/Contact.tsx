@@ -2,6 +2,7 @@ import { Github, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { t } from "i18next";
+import { Trans } from "react-i18next";
 
 const Contact = () => {
   return (
@@ -11,8 +12,10 @@ const Contact = () => {
     >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-5">
-          <h1 className=" text-4xl uppercase">
-            <span className="text-primary">Contact</span> Me
+          <h1 className=" text-3xl uppercase">
+            <Trans i18nKey="contact.title">
+              Me <span className="text-primary">Contact</span>
+            </Trans>
           </h1>
           <p>{t("contact.description")}</p>
         </div>

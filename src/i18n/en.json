@@ -1,5 +1,6 @@
 {
   "navbar": {
+    "brand": "Sopheak",
     "about": "About",
     "project": "Project",
     "contact": "Contact",
@@ -11,7 +12,7 @@
     "description": "Fresh graduate student of Computer Science at Royal University of Phnom Penh"
   },
   "about": {
-    "title": "អំពីខ្ញុំ",
+    "title": "About <1>Me</1>",
     "description": "I specialize in both frontend and backend technologies to create seamless, scalable web applications. With expertise in React, Next.js, Spring Boot, and Laravel, I build responsive user interfaces and robust backend systems, ensuring high performance, security, and maintainability throughout the entire application lifecycle.",
     "frontendTitle": "Frontend Development",
     "frontendDescription": "I build responsive, high-performance web applications with clean, maintainable code. Skilled in React, Next.js, Tailwind CSS, WebSockets, and API integrations, I focus on crafting seamless user experiences and optimizing performance.",
@@ -19,10 +20,10 @@
     "backendDescription": "I develop scalable and efficient backend systems using Spring Boot and Laravel. Skilled in RESTful APIs, WebSockets, database management, and performance optimization, I focus on building secure and maintainable architectures."
   },
   "project": {
-    "title": "​គម្រោងដែលខ្ញុំបានបង្កើត"
+    "title": " <1>Project</1> I've Done"
   },
   "contact": {
-    "title": "ទំនាក់ទំនងខ្ញុំ",
+    "title": "<1>Contact</1> Me",
     "description": "Have a project in mind or just want to connect? Feel free to reach out! I'm always open to discussing new opportunities, collaborations, or simply chatting about tech."
   },
   "label": {

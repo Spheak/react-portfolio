@@ -11,7 +11,7 @@ const Home = () => {
                 <h4 className="uppercase font-semibold">
                   {t("home.primaryTitle")}
                 </h4>
-                <h1 className="text-4xl lg:text-[60px] font-serif uppercase font-bold">
+                <h1 className={`text-4xl lg:text-[60px] uppercase font-bold mt-4`}>
                   {t("home.secondaryTitle")}
                 </h1>
                 <p className="mt-5 text-xs">{t("home.description")}</p>

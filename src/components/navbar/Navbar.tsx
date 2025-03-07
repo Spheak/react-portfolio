@@ -6,21 +6,13 @@ import CambodiaIcon from "@/assets/CambodiaIcon";
 import UkIcon from "@/assets/UkIcon";
 import "./navbar.css";
 import { t } from "i18next";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = ({ handleLanguage }:{handleLanguage: () => void}) => {
   const sideNavRef = useRef<HTMLDivElement>(null);
   const [collapsed, setCollapsed] = useState(true);
-  const [flage, setFlage] = useState(false);
-  const {
-    i18n: { changeLanguage, language },
-  } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(language);
-  const handleChangeLanguage = () => {
-    const newLanguage = currentLanguage === "en" ? "kh" : "en";
-    setCurrentLanguage(newLanguage);
-    changeLanguage(newLanguage);
-  };
+  const [flage, setFlage] = useState("en");
+
   useEffect(() => {
     // Add event listener to the document object
     document.addEventListener("mousedown", handleClickOutside);
@@ -31,24 +23,26 @@ const Navbar = () => {
     };
   }, []);
 
-  function handleClickOutside(event:MouseEvent) {
-    if (sideNavRef.current && !sideNavRef.current.contains(event.target as Node)) {
-      setCollapsed(true)
+  function handleClickOutside(event: MouseEvent) {
+    if (
+      sideNavRef.current &&
+      !sideNavRef.current.contains(event.target as Node)
+    ) {
+      setCollapsed(true);
     }
   }
-  useEffect(()=>{
-    if(collapsed === false){
+  useEffect(() => {
+    if (collapsed === false) {
       document.body.style.overflow = "hidden";
-    }
-    else{
+    } else {
       document.body.style.overflow = "auto";
     }
-  },[collapsed])
+  }, [collapsed]);
 
   return (
     <nav className="max-w-[1800px] w-full flex  items-center  justify-between p-5 lg:py-0 bg-primary text-white">
       <div>
-        <p>SoPheak</p>
+        <p>{t("navbar.brand")}</p>
       </div>
       <div>
         <div
@@ -106,11 +100,11 @@ const Navbar = () => {
       <div className="text-foreground flex items-center gap-5">
         <Button
           onClick={() => {
-            setFlage(!flage);
-            handleChangeLanguage();
+            setFlage("en" === flage ? "kh" : "en");
+            handleLanguage();
           }}
         >
-          {currentLanguage === 'en' ? <CambodiaIcon /> : <UkIcon />}
+          {flage === "en" ? <CambodiaIcon /> : <UkIcon />}
         </Button>
 
         <ModeToggleButton />

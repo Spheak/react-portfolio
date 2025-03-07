@@ -1,5 +1,6 @@
 import { t } from "i18next";
 import { Computer, Cpu } from "lucide-react";
+import { Trans } from "react-i18next";
 
 const About = () => {
   return (
@@ -10,7 +11,9 @@ const About = () => {
       <div className="flex flex-col gap-5">
         <div>
           <h1 className="text-3xl uppercase">
-            About <span className=" text-primary">Me</span>
+            <Trans i18nKey="about.title">
+              About <span className="text-primary">Me</span>
+            </Trans>
           </h1>
           {/* <hr className="w-[100px] bg-primary h-2" /> */}
         </div>

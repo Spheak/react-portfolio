@@ -28,7 +28,15 @@ export function ModeToggleButton() {
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          onClick={() => {
+            const isDarkMode = window.matchMedia(
+              "(prefers-color-scheme: dark)"
+            ).matches;
+
+            return setTheme(isDarkMode ? "dark" : "light");
+          }}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
